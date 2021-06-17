@@ -24,6 +24,7 @@ public class add_ac extends AppCompatActivity {
     private Spinner spinner;
     private Calendar calendar = Calendar.getInstance();
 
+    // THIS CONTAINS ALL THE VALUES OF THE DROPDOWN MENU
     String[] items = new String[]{"Window" , "Split"};
 
     @Override
@@ -35,6 +36,10 @@ public class add_ac extends AppCompatActivity {
         initCalender();
         initSpinner();
 
+        /*
+        HANDLE THE CLICK ON 'ADD AC' BUTTON
+        AND INSERT IT IN DATABASE
+         */
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,6 +71,7 @@ public class add_ac extends AppCompatActivity {
         btn = findViewById(R.id.btn_addAc);
     }
 
+    // HANDLES THE INBUILT CALENDER OF ANDROID STUDIO
     private void initCalender(){
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
 
@@ -81,6 +87,11 @@ public class add_ac extends AppCompatActivity {
 
         };
 
+        /*
+        WHEN PURCHASE EDIT TEXT IS CLICKED
+        CALENDER OPENS UP AND SELECTED DATE
+        IS SET IN EDIT TEXT
+         */
         edtPurchaseDate.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -93,6 +104,7 @@ public class add_ac extends AppCompatActivity {
         });
     }
 
+    // SETTING TEXT ACCORDING TO THE SELECTED DATE FROM CALENDER
     private void updateLabel(){
         String myFormat = "MM/dd/yy"; //In which you need put here
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);

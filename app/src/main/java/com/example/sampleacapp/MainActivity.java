@@ -39,11 +39,16 @@ public class MainActivity extends AppCompatActivity {
 
         Cursor cursor = databaseManager.readAllData();
 
+        /*
+        GO THROUGH ALL ROWS IN DATABASE AND CREATE
+        AC OBJECT ACCORDINGLY
+         */
         while(cursor.moveToNext()){
             AC currentAC = new AC (cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4));
             AcList.add(currentAC);
         }
 
+        // SET RECYCLERVIEW ADAPTER
         RecylerviewAdapter adapter = new RecylerviewAdapter(AcList);
         recyclerView.setAdapter(adapter);
 
@@ -55,6 +60,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        THIS WILL DELETE ALL ROWS FROM THE TABLE
+         */
         btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +70,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /*
+        CHECK IF THERE IS NO ELEMENT IN RECYCLER VIEW
+        AND USE TEXT ACCORDINGLY
+         */
         if(AcList.size() == 0){
             txtAddAc.setText("No Ac. Add some ACs.");
         }else {
@@ -72,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
         databaseManager.delete();
     }
 
+    // INIT ALL VIEWS
     private void initView(){
         btn = findViewById(R.id.button);
         btnDelete = findViewById(R.id.btnDelete);
