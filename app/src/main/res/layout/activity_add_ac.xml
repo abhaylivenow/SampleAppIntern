@@ -30,7 +30,8 @@
     <EditText
         android:id="@+id/edt_acModel"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@drawable/edt"
+        android:layout_height="60dp"
         android:layout_below="@+id/spinner_category"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -41,7 +42,8 @@
     <EditText
         android:id="@+id/edt_serial_number"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:background="@drawable/edt"
+        android:layout_height="60dp"
         android:layout_below="@+id/edt_acModel"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -52,7 +54,8 @@
     <EditText
         android:id="@+id/edt_date"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:background="@drawable/edt"
         android:layout_below="@+id/edt_serial_number"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -67,7 +70,8 @@
     <EditText
         android:id="@+id/edt_installed_place"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:background="@drawable/edt"
         android:layout_below="@+id/edt_date"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -78,7 +82,8 @@
     <EditText
         android:id="@+id/edt_purchased_from"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:background="@drawable/edt"
         android:layout_below="@+id/edt_installed_place"
         android:layout_marginRight="10dp"
         android:layout_marginLeft="10dp"
@@ -88,7 +93,10 @@
 
     <Button
         android:id="@+id/btn_addAc"
-        android:layout_width="wrap_content"
+        android:background="@drawable/btn"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/edt_purchased_from"
         android:text="Add ac"

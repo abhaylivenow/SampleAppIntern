@@ -41,7 +41,8 @@ public class add_ac extends AppCompatActivity {
 
                 String acType = spinner.getSelectedItem().toString();
                 String heading = edtAcModel.getText().toString() + " " + acType;
-                String purchaseDetail = "Purchased on "+ edtPurchaseDate.getText().toString();
+                String purchaseFrom = edtPurchasedFrom.getText().toString();
+                String purchaseDetail = "Purchased on "+ edtPurchaseDate.getText().toString() + " /" + purchaseFrom;
                 String installedPlace = edtInstalledPlace.getText().toString();
                 insertData(heading,purchaseDetail,installedPlace,acType);
 

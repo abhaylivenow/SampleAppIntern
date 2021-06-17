@@ -43,12 +43,13 @@
             android:id="@+id/list_item_installedPlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="#3268a8"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="60dp"
             android:text="Installed Place"
             android:layout_marginRight="10dp"
             android:textStyle="bold"
-            android:layout_marginLeft="16dp"/>
+            android:layout_marginLeft="20dp"/>
 
 
     </RelativeLayout>
