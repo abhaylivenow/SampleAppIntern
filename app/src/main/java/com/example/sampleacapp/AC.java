@@ -4,13 +4,13 @@ public class AC {
     private String model;
     private String date;
     private String installedPlace;
-//    private String acType;
+    private String acType;
 
-    public AC(String model, String date, String installedPlace) {
+    public AC(String model, String date, String installedPlace, String acType) {
         this.model = model;
         this.date = date;
         this.installedPlace = installedPlace;
-//        this.acType = acType;
+        this.acType = acType;
     }
 
     public String getModel() {
@@ -37,11 +37,11 @@ public class AC {
         this.installedPlace = installedPlace;
     }
 
-//    public String getAcType() {
-//        return acType;
-//    }
-//
-//    public void setAcType(String acType) {
-//        this.acType = acType;
-//    }
+    public String getAcType() {
+        return acType;
+    }
+
+    public void setAcType(String acType) {
+        this.acType = acType;
+    }
 }

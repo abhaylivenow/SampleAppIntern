@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         Cursor cursor = databaseManager.readAllData();
 
         while(cursor.moveToNext()){
-            AC currentAC = new AC (cursor.getString(1),cursor.getString(2),cursor.getString(3));
+            AC currentAC = new AC (cursor.getString(1),cursor.getString(2),cursor.getString(3),cursor.getString(4));
             AcList.add(currentAC);
         }
 

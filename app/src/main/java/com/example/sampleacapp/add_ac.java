@@ -40,10 +40,10 @@ public class add_ac extends AppCompatActivity {
             public void onClick(View v) {
 
                 String acType = spinner.getSelectedItem().toString();
-                String heading = edtAcModel.getText().toString();
+                String heading = edtAcModel.getText().toString() + " " + acType;
                 String purchaseDetail = "Purchased on "+ edtPurchaseDate.getText().toString();
                 String installedPlace = edtInstalledPlace.getText().toString();
-                insertData(heading,purchaseDetail,installedPlace);
+                insertData(heading,purchaseDetail,installedPlace,acType);
 
                 Intent intent = new Intent(add_ac.this,MainActivity.class);
                 startActivity(intent);
@@ -51,8 +51,8 @@ public class add_ac extends AppCompatActivity {
         });
     }
 
-    private void insertData(String model, String serialNumber, String installedPlace){
-        String res = new DatabaseManager(this).addRecord(model,serialNumber,installedPlace);
+    private void insertData(String model, String serialNumber, String installedPlace, String acType){
+        String res = new DatabaseManager(this).addRecord(model,serialNumber,installedPlace,acType);
         Toast.makeText(this, "successfully inserted", Toast.LENGTH_SHORT).show();
     }
 

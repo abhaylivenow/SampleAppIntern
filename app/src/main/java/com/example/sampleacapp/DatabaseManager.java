@@ -15,12 +15,12 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final String dbname="DB_AC";
 
     public DatabaseManager(@Nullable Context context){
-        super(context, dbname, null, 1);
+        super(context, dbname, null, 2);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String qry="create table AC_DETAIL_TABLE ( id integer PRIMARY KEY AUTOINCREMENT, MODEL text, SERIAL_NUMBER text, INSTALLED_PLACE text)";
+        String qry="create table AC_DETAIL_TABLE ( id integer PRIMARY KEY AUTOINCREMENT, MODEL text, SERIAL_NUMBER text, INSTALLED_PLACE text, AC_TYPE text )";
         db.execSQL(qry);
     }
 
@@ -31,13 +31,14 @@ public class DatabaseManager extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public String addRecord(String model, String serialNumber, String installedPlace){
+    public String addRecord(String model, String serialNumber, String installedPlace, String acType){
         SQLiteDatabase db=this.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
         cv.put("MODEL",model);
         cv.put("SERIAL_NUMBER",serialNumber);
         cv.put("INSTALLED_PLACE",installedPlace);
+        cv.put("AC_TYPE",acType);
 
         float res = db.insert("AC_DETAIL_TABLE",null,cv);
 

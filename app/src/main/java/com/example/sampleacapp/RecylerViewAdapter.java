@@ -34,11 +34,12 @@ class RecylerviewAdapter extends RecyclerView.Adapter<RecylerviewAdapter.AcHolde
         holder.txtDate.setText(AcList.get(position).getDate());
         holder.txt_installedPlace.setText(AcList.get(position).getInstalledPlace());
 
-//        if(AcList.get(position).getAcType().equals("Window")){
+        if(AcList.get(position).getAcType().equals("Window")){
             holder.acImage.setImageResource(R.drawable.winac);
-//        }else {
-//            holder.acImage.setImageResource(R.drawable.ac);
-//        }
+        }else {
+            holder.acImage.setImageResource(R.drawable.ac);
+        }
+        System.out.println(AcList.get(position).getAcType());
 
     }
 
